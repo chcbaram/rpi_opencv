@@ -106,8 +106,8 @@ void ColorDetectPi()
 	CvCapture *capture = cvCaptureFromCAM(0);
 	
 	// 캡쳐 이미지 사이즈 설정
-	cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_WIDTH	, 320);
-	cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_HEIGHT	, 240);
+	cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_WIDTH	, 320/2);
+	cvSetCaptureProperty(capture, CV_CAP_PROP_FRAME_HEIGHT	, 240/2);
 	
 #if USE_FOR_MAC == true
 	cvNamedWindow("Cam",CV_WINDOW_AUTOSIZE);
@@ -235,8 +235,8 @@ void ColorDetectPi()
 		
 		//if( ch == 's' )
 		{
-			cvSaveImage("/srv/cam.jpg",frame);
-			cvSaveImage("/srv/http/out.jpg",img_dst);
+			cvSaveImage("/mnt/ramdisk/img1/cam.jpg",frame);
+			cvSaveImage("/mnt/ramdisk/img2/out.jpg",img_dst);
 			//cvSaveImage("/srv/http/out.jpg",img_red);
 		}
 		
